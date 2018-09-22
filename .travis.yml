@@ -4,4 +4,4 @@ dotnet: 2.1
 script:
  - dotnet restore
  - dotnet build
- - dotnet test test/PrettierTestLogger.Tests/PrettierTestLogger.Tests.csproj 
+ - dotnet test --logger prettier test/PrettierTestLogger.Tests/PrettierTestLogger.Tests.csproj

@@ -7,5 +7,5 @@ before_build:
 build_script:
   - cmd: dotnet build
 test_script:
-  - cmd: dotnet test test/PrettierTestLogger.Tests/PrettierTestLogger.Tests.csproj 
+  - cmd: dotnet test --logger prettier test/PrettierTestLogger.Tests/PrettierTestLogger.Tests.csproj 
 deploy: off
