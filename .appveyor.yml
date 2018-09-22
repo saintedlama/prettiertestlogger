@@ -1,0 +1,11 @@
+image: Visual Studio 2017
+branches:
+  only:
+  - master
+before_build:
+  - cmd: dotnet --version
+build_script:
+  - cmd: dotnet build
+test_script:
+  - cmd: dotnet test test/PrettierTestLogger.Tests/PrettierTestLogger.Tests.csproj 
+deploy: off
