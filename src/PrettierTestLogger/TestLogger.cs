@@ -41,9 +41,6 @@ namespace PrettierTestLogger
 
         public void TestRunCompleteHandler(object sender, TestRunCompleteEventArgs e)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.WriteLine("TestRunCompleteHandler - Writing Test results ");
-
             var orderedByTestClass = new Dictionary<string, List<LogEntry>>();
 
             foreach (var logEntry in LogEntries)
@@ -57,6 +54,7 @@ namespace PrettierTestLogger
             }
 
             var foregroundColor = Console.ForegroundColor;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             foreach (var entry in orderedByTestClass)
             {
