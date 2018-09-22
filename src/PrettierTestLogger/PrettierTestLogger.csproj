@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>PrettierTestLogger</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Christoph Walcher</Authors>
+    <PackageTags>dotnet;test;logger;xunit</PackageTags>
+    <Description>Prettier formatting for your dotnet core tests. Tested with xunit.</Description>
+    <PackageProjectUrl>https://github.com/saintedlama/prettiertestlogger</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/saintedlama/prettiertestlogger</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
