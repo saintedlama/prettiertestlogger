@@ -136,6 +136,9 @@ _TeamCity*
 .axoCover/*
 !.axoCover/settings.json
 
+# Coverlet with OpenCover
+coverage.opencover.xml
+
 # Visual Studio code coverage results
 *.coverage
 *.coveragexml
