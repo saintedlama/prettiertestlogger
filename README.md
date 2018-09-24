@@ -2,7 +2,9 @@
 
 Prettier formatting for your dotnet core tests. Tested with xunit.
 
-[![Build Status](https://travis-ci.org/saintedlama/prettiertestlogger.svg?branch=master)](https://travis-ci.org/saintedlama/prettiertestlogger)
+[![Travis Build Status](https://travis-ci.org/saintedlama/prettiertestlogger.svg?branch=master)](https://travis-ci.org/saintedlama/prettiertestlogger)
+[![AppVeyorBuild status](https://ci.appveyor.com/api/projects/status/usdph5kv93bw83jw?svg=true)](https://ci.appveyor.com/project/saintedlama/prettiertestlogger)
+
 [![Coverage Status](https://coveralls.io/repos/github/saintedlama/prettiertestlogger/badge.svg?branch=master)](https://coveralls.io/github/saintedlama/prettiertestlogger?branch=master)
 
 ## Motivation
