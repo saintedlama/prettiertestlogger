@@ -9,5 +9,5 @@ build_script:
   - cmd: dotnet build
 test_script:
   - cmd: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover --logger prettier test/PrettierTestLogger.Tests/PrettierTestLogger.Tests.csproj 
-  - cmd: csmacnz.Coveralls --opencover -i test/PrettierTestLogger.Tests/coverage.opencover.xml --repoToken %COVERALLS_REPO_TOKEN% --commitId %APPVEYOR_REPO_COMMIT% --commitBranch %APPVEYOR_REPO_BRANCH% --commitAuthor %APPVEYOR_REPO_COMMIT_AUTHOR% --commitEmail %APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL% --commitMessage %APPVEYOR_REPO_COMMIT_MESSAGE% --jobId %APPVEYOR_JOB_ID%
+  - ps: csmacnz.Coveralls --opencover -i C:\projects\prettiertestlogger\test\PrettierTestLogger.Tests\coverage.opencover.xml --repoToken $env:COVERALLS_REPO_TOKEN --commitId $env:APPVEYOR_REPO_COMMIT --commitBranch $env:APPVEYOR_REPO_BRANCH --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE --jobId $env:APPVEYOR_JOB_ID
 deploy: off
