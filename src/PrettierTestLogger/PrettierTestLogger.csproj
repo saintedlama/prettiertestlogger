@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Prettier.TestLogger</AssemblyName>
+    <RootNamespace>Prettier.TestLogger</RootNamespace>
     <PackageId>PrettierTestLogger</PackageId>
     <Version>1.0.0</Version>
     <Authors>Christoph Walcher</Authors>
@@ -9,10 +11,18 @@
     <Description>Prettier formatting for your dotnet core tests. Tested with xunit.</Description>
     <PackageProjectUrl>https://github.com/saintedlama/prettiertestlogger</PackageProjectUrl>
     <RepositoryUrl>https://github.com/saintedlama/prettiertestlogger</RepositoryUrl>
+
+    <BuildOutputTargetFolder>build</BuildOutputTargetFolder>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.TestPlatform.ObjectModel" Version="15.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="PrettierTestLogger.props">
+      <PackagePath>build/netstandard2.0</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
 </Project>
