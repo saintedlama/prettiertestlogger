@@ -5,7 +5,7 @@
     <AssemblyName>Prettier.TestLogger</AssemblyName>
     <RootNamespace>Prettier.TestLogger</RootNamespace>
     <PackageId>PrettierTestLogger</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>Christoph Walcher</Authors>
     <PackageTags>dotnet;test;logger;xunit</PackageTags>
     <Description>Prettier formatting for your dotnet core tests. Tested with xunit.</Description>
