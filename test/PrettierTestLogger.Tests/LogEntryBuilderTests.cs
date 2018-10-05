@@ -76,6 +76,25 @@ namespace PrettierTestLogger.Tests
             Assert.Equal("log entryBuilder tests", logEntry.TestClass);
         }
 
+        [Fact]
+        public void Should_Not_Split_Abbrevations_In_Uppercase()
+        {
+            var builder = new LogEntryBuilder();
+            var testResult = BuildTestResultFromDisplayName("PrettierTestLogger.Tests.LogEntryBuilderTests.ShouldNotSplitABBREVATIONS");
+
+            var logEntry = builder.BuildLogEntry(testResult);
+            Assert.Equal("should not split ABBREVATIONS", logEntry.Test);
+        }
+
+       [Fact]
+        public void Should_Not_Split_Abbrevations_In_Uppercase_Within_Text()
+        {
+            var builder = new LogEntryBuilder();
+            var testResult = BuildTestResultFromDisplayName("PrettierTestLogger.Tests.LogEntryBuilderTests.ShouldNotSplitABBREVATIONSInText");
+
+            var logEntry = builder.BuildLogEntry(testResult);
+            Assert.Equal("should not split ABBREVATIONS in text", logEntry.Test);
+        }
         private TestResult BuildTestResultFromDisplayName(string displayName)
         {
             return new TestResult(new TestCase { DisplayName = displayName }) {
