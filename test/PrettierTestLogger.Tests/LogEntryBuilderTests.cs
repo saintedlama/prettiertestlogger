@@ -86,7 +86,7 @@ namespace PrettierTestLogger.Tests
             Assert.Equal("should not split ABBREVATIONS", logEntry.Test);
         }
 
-       [Fact]
+        [Fact]
         public void Should_Not_Split_Abbrevations_In_Uppercase_Within_Text()
         {
             var builder = new LogEntryBuilder();
@@ -95,6 +95,27 @@ namespace PrettierTestLogger.Tests
             var logEntry = builder.BuildLogEntry(testResult);
             Assert.Equal("should not split ABBREVATIONS in text", logEntry.Test);
         }
+
+        [Fact]
+        public void Should_Handle_Ticked_Function_Names()
+        {
+            var builder = new LogEntryBuilder();
+            var testResult = BuildTestResultFromDisplayName("PrettierTestLogger.Should handle ticked function names");
+
+            var logEntry = builder.BuildLogEntry(testResult);
+            Assert.Equal("Should handle ticked function names", logEntry.Test);
+        }
+
+        [Fact]
+        public void Should_Handle_Ticked_Function_Names_With_Special_Characters()
+        {
+            var builder = new LogEntryBuilder();
+            var testResult = BuildTestResultFromDisplayName("PrettierTestLogger.Should handle ticked function names with special characters, e.g. these ones");
+
+            var logEntry = builder.BuildLogEntry(testResult);
+            Assert.Equal("Should handle ticked function names with special characters, e.g. these ones", logEntry.Test);
+        }
+
         private TestResult BuildTestResultFromDisplayName(string displayName)
         {
             return new TestResult(new TestCase { DisplayName = displayName }) {
