@@ -12,6 +12,18 @@ namespace PrettierTestLogger
         {
             var testResultDisplayNameParts = testResult.DisplayName.Split('.').ToList();
 
+            if (testResult.DisplayName.Contains(' '))
+            {
+                // Assume that tests that contain spaces are already formatted
+                return new LogEntry
+                {
+                    TestClass = testResultDisplayNameParts[0],
+                    Test = String.Join(".", testResultDisplayNameParts.Skip(1)),
+                    Outcome = testResult.Outcome,
+                    DurationMs = (int)testResult.Duration.TotalMilliseconds,
+                };
+            }
+
             if (testResultDisplayNameParts.Count < 2)
             {
                 // This is a best effort try if things go wrong
